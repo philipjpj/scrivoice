@@ -7,8 +7,7 @@ Press a shortcut, speak, and your words are typed wherever you are writing —
 ChatGPT, Claude, email, Slack, Word, any app.<br>
 100% on your computer. Free and open source.</p>
 
-<p align="center"><a href="https://github.com/philipjpj/scrivoice/releases/latest"><b>⬇ Download ScriVoice</b></a>
-&nbsp;·&nbsp; <a href="#-italiano">🇮🇹 Italiano</a></p>
+<p align="center"><a href="https://github.com/philipjpj/scrivoice/releases/latest"><b>⬇ Download ScriVoice</b></a></p>
 
 ---
 
@@ -77,69 +76,7 @@ click the file for your computer:
 3. The text appears where you were typing. **Right-click** the small widget for **Settings**
    (language, shortcut, microphone, theme…).
 
-Full guide with pictures: [English (PDF)](docs/ScriVoice-Guide-EN.pdf) · [Italiano (PDF)](docs/ScriVoice-Guida-IT.pdf)
-
----
-
-## 🇮🇹 Italiano
-
-**ScriVoice** è un programma **gratuito** di dettatura vocale per Windows e Mac: premi una scorciatoia, parli,
-e il testo viene scritto dove stai scrivendo (ChatGPT, Claude, email, Word, qualsiasi app). La voce viene
-trascritta **sul tuo computer**: niente account, niente internet, nessun dato inviato.
-
-**1. Controlla il tuo computer**
-
-- **Windows:** Windows 10 o 11 (64 bit).
-- **Mac:** solo Mac con **chip Apple**. Per controllare: **menu Apple** (in alto a sinistra) → **Informazioni su questo Mac**. Se leggi
-  **"Chip Apple M1"** (o M2, M3, M4…) va bene. Se leggi **"Processore … Intel"**, non è supportato.
-- Circa **1,5 GB** di spazio libero.
-
-**2. Scarica un solo file**
-
-Apri la [**pagina di download**](https://github.com/philipjpj/scrivoice/releases/latest), scorri fino a
-**Assets** e clicca il file del tuo computer:
-
-| Il tuo computer | File da scaricare |
-|---|---|
-| Windows | **`ScriVoiceSetup-1.0.0.exe`** |
-| Mac | **`ScriVoice-1.0.0-mac-AppleSilicon.dmg`** |
-
-> Il numero di versione nel nome del file può essere più alto. Ignora i due file **"Source code"**:
-> servono ai programmatori e non si installano.
-
-**3. Installa**
-
-<details open><summary><b>Windows</b></summary>
-
-1. Fai doppio clic sul file `ScriVoiceSetup-….exe` scaricato.
-2. Windows potrebbe mostrare **"Windows ha protetto il PC"**. È normale per le app gratuite senza certificato
-   a pagamento: clicca **Ulteriori informazioni**, poi **Esegui comunque**.
-3. Clicca **Avanti** alcune volte. Alla fine l'installazione "prepara" ScriVoice per circa un minuto.
-4. Apri **ScriVoice** dal menu Start. Non servono permessi di amministratore.
-
-</details>
-
-<details open><summary><b>Mac</b></summary>
-
-1. Fai doppio clic sul file `.dmg` scaricato e **trascina ScriVoice in Applicazioni**.
-2. Apri ScriVoice da Applicazioni. La prima volta il Mac dice che **non può verificare lo sviluppatore**
-   (normale per le app fuori dall'App Store): clicca **Fine**, apri **Impostazioni di Sistema → Privacy e
-   sicurezza**, scorri in fondo e clicca **Apri comunque**. Solo la prima volta.
-3. Quando richiesto, consenti ScriVoice in **Impostazioni di Sistema → Privacy e sicurezza**: **Microfono**,
-   **Accessibilità** (per incollare il testo) e **Monitoraggio input** (per la scorciatoia).
-4. Chiudi ScriVoice (icona in alto nello schermo → **Esci**) e riaprilo.
-
-</details>
-
-**4. Usalo**
-
-1. Clicca nell'app in cui vuoi scrivere (una chat, un'email, un documento…).
-2. Premi **Ctrl + Alt + Spazio** (Windows) o **Ctrl + Shift + Spazio** (Mac) e parla, poi premi di nuovo.
-   Oppure tienila premuta mentre parli. **Esc** annulla.
-3. Il testo compare dove stavi scrivendo. Con il **clic destro** sul piccolo widget apri le **Impostazioni**
-   (lingua, scorciatoia, microfono, tema…).
-
-Guida completa con immagini: [Italiano (PDF)](docs/ScriVoice-Guida-IT.pdf) · [English (PDF)](docs/ScriVoice-Guide-EN.pdf)
+Full guide with pictures: [ScriVoice Guide (PDF)](docs/ScriVoice-Guide-EN.pdf)
 
 ---
 
