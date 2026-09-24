@@ -54,6 +54,7 @@ jobs:
         with:
           files: dist/ScriVoiceSetup-*.exe
           prerelease: ${{ contains(github.ref_name, '-') }}
+          body_path: .github/release_notes.md
 
   mac:
     runs-on: macos-14   # Apple Silicon
@@ -96,3 +97,4 @@ jobs:
         with:
           files: dist/ScriVoice-*-mac-AppleSilicon.dmg
           prerelease: ${{ contains(github.ref_name, '-') }}
+          body_path: .github/release_notes.md
