@@ -1,0 +1,42 @@
+SCRIVOICE PER MAC — PRIMO AVVIO
+================================
+
+1. Trascina ScriVoice nella cartella Applicazioni (la freccia in questa finestra).
+
+2. Apri ScriVoice da Applicazioni. La prima volta il Mac dice che non può verificare
+   lo sviluppatore: è normale per le app distribuite fuori dall'App Store.
+   - Clicca "Fine" (o "OK").
+   - Apri Impostazioni di Sistema → Privacy e sicurezza, scorri in fondo e clicca
+     "Apri comunque" accanto a ScriVoice. Conferma con la password o Touch ID.
+   Serve solo la prima volta.
+
+3. Dai i permessi quando il Mac li chiede (Impostazioni di Sistema → Privacy e sicurezza):
+   - Microfono: per registrare la voce.
+   - Accessibilità: per incollare il testo nell'app in cui stai scrivendo.
+   - Monitoraggio input: per la scorciatoia da tastiera.
+   Attiva ScriVoice in ciascuna voce, poi chiudi ScriVoice (icona in alto → Esci) e riaprilo.
+
+Scorciatoia: Ctrl + Shift + Spazio (tocca per iniziare e finire, oppure tieni premuto).
+Requisiti: Mac con chip Apple (M1 o successivo), macOS 13 o successivo.
+
+
+SCRIVOICE FOR MAC — FIRST LAUNCH
+================================
+
+1. Drag ScriVoice to the Applications folder (the arrow in this window).
+
+2. Open ScriVoice from Applications. The first time, your Mac says it cannot verify
+   the developer: this is normal for apps distributed outside the App Store.
+   - Click "Done" (or "OK").
+   - Open System Settings → Privacy & Security, scroll to the bottom and click
+     "Open Anyway" next to ScriVoice. Confirm with your password or Touch ID.
+   This is needed only the first time.
+
+3. Grant the permissions when your Mac asks (System Settings → Privacy & Security):
+   - Microphone: to record your voice.
+   - Accessibility: to paste the text into the app you are typing in.
+   - Input Monitoring: for the keyboard shortcut.
+   Turn on ScriVoice in each one, then quit ScriVoice (top icon → Quit) and open it again.
+
+Shortcut: Ctrl + Shift + Space (tap to start and stop, or hold while speaking).
+Requirements: Mac with Apple silicon (M1 or later), macOS 13 or later.

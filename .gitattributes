@@ -1,0 +1,5 @@
+# gli script per Mac devono avere fine riga Unix, quelli per Windows fine riga Windows
+*.command text eol=lf
+*.sh text eol=lf
+*.bat text eol=crlf
+*.py text eol=lf

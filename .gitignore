@@ -1,0 +1,19 @@
+# ambiente Python (ognuno lo crea con install.command / install.bat)
+.venv/
+__pycache__/
+# dati e preferenze personali
+recordings/
+config.json
+# collegamenti Windows generati da setup_shortcut.py
+*.lnk
+*.log
+# icona .ico di Windows: generata da setup_shortcut.py (install.bat)
+assets/*.ico
+logs/
+selftest.json
+license.json
+# pacchetti generati
+build/
+dist/
+models/
+legal/THIRD_PARTY_LICENSES.txt

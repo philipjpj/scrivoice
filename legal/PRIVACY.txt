@@ -1,0 +1,17 @@
+SCRIVOICE - PRIVACY
+(English below / Italiano più sotto)
+
+ENGLISH
+- Your voice is recorded and transcribed only on your computer, with a speech recognition model
+  included in the app. Audio and text are never sent anywhere.
+- ScriVoice makes no internet connections: no accounts, no analytics, no advertising, no tracking.
+- If you enable "Save recordings" in the settings, audio files and transcriptions are stored only on
+  your computer, in the ScriVoice data folder. You can delete them at any time.
+
+ITALIANO
+- La tua voce viene registrata e trascritta solo sul tuo computer, con un modello di riconoscimento
+  vocale incluso nell'app. Audio e testo non vengono mai inviati da nessuna parte.
+- ScriVoice non si collega a internet: nessun account, nessuna statistica d'uso, nessuna pubblicità,
+  nessun tracciamento.
+- Se attivi "Salva le registrazioni" nelle impostazioni, file audio e trascrizioni restano solo sul
+  tuo computer, nella cartella dati di ScriVoice. Puoi cancellarli quando vuoi.

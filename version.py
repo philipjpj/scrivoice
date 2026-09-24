@@ -1,0 +1,5 @@
+"""Versione e dati del prodotto."""
+__version__ = "1.0.0"
+APP_NAME = "ScriVoice"
+# Pagina del progetto (codice, download, segnalazioni), mostrata in "Informazioni"
+PROJECT_URL = "https://github.com/philipjpj/scrivoice"

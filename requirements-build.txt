@@ -1,0 +1,3 @@
+# strumenti per costruire i pacchetti (non servono per usare il programma)
+pyinstaller>=6.10
+pillow>=10

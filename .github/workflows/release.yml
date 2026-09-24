@@ -1,0 +1,98 @@
+# Costruisce ScriVoice per Windows e Mac e pubblica i due file in una Release (privata come il repo).
+#
+# Si avvia creando un tag di versione, per esempio:  git tag v1.0.0 && git push origin v1.0.0
+# (i tag con un trattino, es. v1.0.0-test1, creano una "pre-release" di prova).
+# I file vanno nella Release e non tra gli "artifact", che nei repo privati gratuiti hanno poco spazio.
+
+name: Build e release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Versione dal tag
+        shell: bash
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_ENV"
+      - name: Dipendenze
+        run: python -m pip install -r requirements.txt -r requirements-build.txt
+      - uses: actions/cache@v4
+        with:
+          path: models
+          key: whisper-small-v1
+      - name: Modello, icone, licenze
+        run: python packaging/prepare.py
+      - name: PyInstaller
+        run: pyinstaller --noconfirm --clean packaging/scrivoice.spec
+      - name: Autotest del pacchetto
+        timeout-minutes: 8
+        shell: pwsh
+        run: |
+          $p = Start-Process -FilePath dist\ScriVoice\ScriVoice.exe -ArgumentList "--selftest", "selftest.json" -Wait -PassThru
+          Get-Content selftest.json
+          if ($p.ExitCode -ne 0) { throw "Autotest fallito" }
+      - name: Installer (Inno Setup)
+        shell: pwsh
+        run: |
+          $iscc = "${env:ProgramFiles(x86)}\Inno Setup 6\ISCC.exe"
+          if (-not (Test-Path $iscc)) { choco install innosetup -y --no-progress }
+          & $iscc /Q "/DAppVersion=$env:VERSION" packaging\windows\installer.iss
+          if ($LASTEXITCODE -ne 0) { throw "Inno Setup fallito" }
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/ScriVoiceSetup-*.exe
+          prerelease: ${{ contains(github.ref_name, '-') }}
+
+  mac:
+    runs-on: macos-14   # Apple Silicon
+    timeout-minutes: 60
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+      - name: Versione dal tag
+        run: echo "VERSION=${GITHUB_REF_NAME#v}" >> "$GITHUB_ENV"
+      - name: Dipendenze
+        run: |
+          python -m pip install -r requirements.txt -r requirements-build.txt
+          brew install create-dmg
+      - uses: actions/cache@v4
+        with:
+          path: models
+          key: whisper-small-v1
+      - name: Modello, icone, licenze
+        run: python packaging/prepare.py
+      - name: PyInstaller
+        run: pyinstaller --noconfirm --clean packaging/scrivoice.spec
+      - name: Autotest del pacchetto
+        timeout-minutes: 8
+        run: |
+          dist/ScriVoice.app/Contents/MacOS/ScriVoice --selftest selftest.json
+          cat selftest.json
+      - name: Firma ad-hoc e DMG
+        run: bash packaging/mac/build_dmg.sh "$VERSION"
+      - name: Autotest dal DMG
+        timeout-minutes: 8
+        run: |
+          hdiutil attach "dist/ScriVoice-$VERSION-mac-AppleSilicon.dmg" -mountpoint /Volumes/ScriVoiceTest -nobrowse
+          /Volumes/ScriVoiceTest/ScriVoice.app/Contents/MacOS/ScriVoice --selftest selftest-dmg.json
+          cat selftest-dmg.json
+          hdiutil detach /Volumes/ScriVoiceTest
+      - uses: softprops/action-gh-release@v2
+        with:
+          files: dist/ScriVoice-*-mac-AppleSilicon.dmg
+          prerelease: ${{ contains(github.ref_name, '-') }}
