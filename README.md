@@ -104,6 +104,6 @@ Main modules: `main.py` (app), `transcriber.py` (faster-whisper), `recorder.py` 
 
 ## License
 
-[MIT](LICENSE) © philipjpj. The distributed apps include third-party components under their own licenses
+[MIT](LICENSE) © Filippo Pelloia. The distributed apps include third-party components under their own licenses
 (Qt/PySide6 and pynput under the LGPL v3, Whisper model under MIT, and others). See
 `THIRD_PARTY_LICENSES.txt` inside the app.
