@@ -3,7 +3,7 @@
 <h1 align="center">ScriVoice</h1>
 
 <p align="center"><b>Private voice dictation for Windows and Mac.</b><br>
-Press a shortcut, speak, and your words are typed wherever you are writing —
+Press a shortcut, speak, and your words are typed wherever you are writing:
 ChatGPT, Claude, email, Slack, Word, any app.<br>
 100% on your computer. Free and open source.</p>
 
@@ -13,14 +13,14 @@ ChatGPT, Claude, email, Slack, Word, any app.<br>
 
 ## Features
 
-- **Private** — your voice is transcribed on your own computer with a built-in
+- **Private:** your voice is transcribed on your own computer with a built-in
   [Whisper](https://github.com/openai/whisper) model. No audio or text ever leaves your device.
   No account, no internet connection, no tracking.
-- **Works in any app** — the text is pasted where your cursor is, **without sending**: you read it first.
-- **Tap or hold** — tap the shortcut to start and stop, or hold it while you speak (push-to-talk).
-- **Italian, English, Spanish** — or automatic language detection. Interface in the same three languages.
-- **Personal vocabulary and corrections** — teach it names and technical words.
-- **Tiny floating widget** — shows recording, volume and status. Dark, light or neon theme.
+- **Works in any app:** the text is pasted where your cursor is, **without sending**: you read it first.
+- **Tap or hold:** tap the shortcut to start and stop, or hold it while you speak (push-to-talk).
+- **Italian, English, Spanish**, or automatic language detection. Interface in the same three languages.
+- **Personal vocabulary and corrections:** teach it names and technical words.
+- **Tiny floating widget:** shows recording, volume and status. Dark, light or neon theme.
 
 ## Download and install (no technical skills needed)
 
@@ -105,5 +105,5 @@ Main modules: `main.py` (app), `transcriber.py` (faster-whisper), `recorder.py` 
 ## License
 
 [MIT](LICENSE) © philipjpj. The distributed apps include third-party components under their own licenses
-(Qt/PySide6 and pynput under the LGPL v3, Whisper model under MIT, and others) — see
+(Qt/PySide6 and pynput under the LGPL v3, Whisper model under MIT, and others). See
 `THIRD_PARTY_LICENSES.txt` inside the app.

@@ -25,7 +25,7 @@ PROMPTS = {
 
 
 class Transcriber:
-    def __init__(self, model_name, compute_type="int8", language="it", beam_size=5, initial_prompt=None,
+    def __init__(self, model_name, compute_type="int8", language="en", beam_size=5, initial_prompt=None,
                  cpu_threads=0, vocabulary=()):
         self.model_name = model_name
         self.compute_type = compute_type

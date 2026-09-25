@@ -115,7 +115,7 @@ class SettingsDialog(QDialog):
         for code, name in i18n.LANGUAGES:
             self.dict_lang.addItem(name, code)
         self.dict_lang.addItem(tr("Automatico (rileva la lingua)"), "auto")
-        self.dict_lang.setCurrentIndex(max(0, self.dict_lang.findData(cfg.get("language", "it"))))
+        self.dict_lang.setCurrentIndex(max(0, self.dict_lang.findData(cfg.get("language", "en"))))
         form.addRow(tr("Lingua della dettatura:"), self.dict_lang)
         form.addRow(self._hint(tr("La lingua in cui parli. «Automatico» riconosce da solo italiano, "
                                   "inglese o spagnolo, ma sbaglia più spesso con frasi molto corte.")))

@@ -5,18 +5,13 @@ lingua attiva. Per aggiungere un testo nuovo basta aggiungere una voce a _T.
 """
 import os
 
-from PySide6.QtCore import QLibraryInfo, QLocale, QTranslator
+from PySide6.QtCore import QLibraryInfo, QTranslator
 from PySide6.QtWidgets import QApplication
 
 LANGUAGES = [("it", "Italiano"), ("en", "English"), ("es", "Español")]
 
-_current = "it"
+_current = "en"
 _qt_translator = None
-
-
-def system_language():
-    code = QLocale.system().name()[:2]
-    return code if code in dict(LANGUAGES) else "en"
 
 
 def language():
@@ -24,9 +19,9 @@ def language():
 
 
 def set_language(lang):
-    """lang: it | en | es | None (= lingua di Windows)."""
+    """lang: it | en | es; qualsiasi altro valore = inglese."""
     global _current, _qt_translator
-    _current = lang if lang in dict(LANGUAGES) else system_language()
+    _current = lang if lang in dict(LANGUAGES) else "en"
     app = QApplication.instance()
     if app is None:
         return

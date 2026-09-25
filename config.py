@@ -6,7 +6,6 @@ import sys
 import paths
 
 CONFIG_PATH = paths.CONFIG_PATH
-DICTATION_LANGUAGES = ("it", "en", "es")
 
 # Frase di contesto salvata nei config della prima versione: ora è scelta in base alla lingua
 LEGACY_PROMPT = (
@@ -16,8 +15,8 @@ LEGACY_PROMPT = (
 )
 
 DEFAULTS = {
-    # Lingua dell'interfaccia: it | en | es | null (= lingua del sistema)
-    "ui_language": None,
+    # Lingua dell'interfaccia: it | en | es
+    "ui_language": "en",
     # Scorciatoia globale: tap breve = avvia/ferma, tenuta premuta = push-to-talk.
     # Su Mac Ctrl+Option+Spazio cambia la lingua della tastiera: uso Ctrl+Shift+Spazio
     "hotkey": "ctrl+shift+space" if sys.platform == "darwin" else "ctrl+alt+space",
@@ -31,8 +30,8 @@ DEFAULTS = {
     # (small = veloce; large-v3-turbo = più preciso ma ~4x più lento su CPU e ~2 GB di RAM)
     "model": "small",
     "compute_type": "int8",
-    # Lingua della dettatura: it | en | es | auto (rileva tra le tre); None = lingua del sistema
-    "language": None,
+    # Lingua della dettatura: it | en | es | auto (rileva tra le tre)
+    "language": "en",
     # 1 = più veloce; 5 = più preciso
     "beam_size": 5,
     # 0 = automatico (numero di core fisici)
@@ -81,18 +80,13 @@ def load():
                 cfg["initial_prompt"] = ""
         except (OSError, ValueError) as e:
             print(f"config.json non leggibile, uso i valori predefiniti: {e}", file=sys.stderr)
-    if cfg.get("language") is None:
-        cfg["language"] = system_language()
+    # config delle versioni precedenti: null voleva dire "lingua del sistema", ora l'inglese
+    for key in ("ui_language", "language"):
+        if cfg.get(key) is None:
+            cfg[key] = DEFAULTS[key]
     if not os.path.exists(CONFIG_PATH):
         save(cfg)
     return cfg
-
-
-def system_language():
-    """Lingua di dettatura iniziale: quella del sistema, se è tra quelle supportate."""
-    from PySide6.QtCore import QLocale
-    code = QLocale.system().name()[:2]
-    return code if code in DICTATION_LANGUAGES else "en"
 
 
 def save(cfg):
